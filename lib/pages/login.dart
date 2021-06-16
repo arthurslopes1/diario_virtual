@@ -12,6 +12,9 @@ class Login extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             SizedBox(
+              height: 50,
+            ),
+            SizedBox(
               width: 128,
               height: 128,
               child: Image.asset('imagens/logo.png'),
@@ -62,7 +65,7 @@ class Login extends StatelessWidget {
                 ),
               ),
               child: SizedBox.expand(
-                child: FlatButton(
+                child: TextButton(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -79,7 +82,7 @@ class Login extends StatelessWidget {
                   ),
                   onPressed: () {
                     //Adicionar validação de login
-                    if(false){
+                    if(true){
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -96,10 +99,13 @@ class Login extends StatelessWidget {
             ),
             Container(
               height: 40,
-              child: FlatButton(
+              child: TextButton(
                 child: Text(
                   "Cadastre-se",
                   textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
                 ),
                 onPressed: () {
                   Navigator.push(

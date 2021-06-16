@@ -9,6 +9,9 @@ class Cadastro extends StatelessWidget {
         color: Colors.white,
         child: ListView(
           children: <Widget>[
+            SizedBox(
+              height: 130,
+            ),
             TextFormField(
               // autofocus: true,
               keyboardType: TextInputType.text,
@@ -77,7 +80,7 @@ class Cadastro extends StatelessWidget {
               style: TextStyle(fontSize: 20),
             ),
             SizedBox(
-              height: 10,
+              height: 40,
             ),
             Container(
               height: 60,
@@ -89,7 +92,7 @@ class Cadastro extends StatelessWidget {
                 ),
               ),
               child: SizedBox.expand(
-                child: FlatButton(
+                child: TextButton(
                   child: Text(
                     "Cadastrar",
                     style: TextStyle(
@@ -111,10 +114,13 @@ class Cadastro extends StatelessWidget {
             Container(
               height: 40,
               alignment: Alignment.center,
-              child: FlatButton(
+              child: TextButton(
                 child: Text(
                   "Cancelar",
                   textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
                 ),
                 onPressed: () => Navigator.pop(context, false),
               ),
