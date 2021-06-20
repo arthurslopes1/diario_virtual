@@ -1,3 +1,4 @@
+import 'package:diario_virtual/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:diario_virtual/pages/lista.dart';
 import 'package:diario_virtual/globals.dart' as globals;
@@ -6,6 +7,20 @@ class Principal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          globals.pNome = "";
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Login(),
+            ),
+          );
+        },
+        tooltip: 'Logout',
+        backgroundColor: Colors.black,
+        child: Icon(Icons.logout),
+      ),
       body: Center(
         child: Container(
           padding: EdgeInsets.only(top: 60, left: 40, right: 40),
@@ -57,7 +72,8 @@ class Principal extends StatelessWidget {
                       ],
                     ),
                     onPressed: () {
-                      globals.tela = 1;
+                      globals.tela = "Ideias";
+                      globals.nTela = 1;
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -97,7 +113,8 @@ class Principal extends StatelessWidget {
                       ],
                     ),
                     onPressed: () {
-                      globals.tela = 2;
+                      globals.tela = "Opiniões";
+                      globals.nTela = 2;
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -137,7 +154,8 @@ class Principal extends StatelessWidget {
                       ],
                     ),
                     onPressed: () {
-                      globals.tela = 3;
+                      globals.tela = "Desejos";
+                      globals.nTela = 3;
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -177,7 +195,8 @@ class Principal extends StatelessWidget {
                       ],
                     ),
                     onPressed: () {
-                      globals.tela = 4;
+                      globals.tela = "Experiências";
+                      globals.nTela = 4;
                       Navigator.push(
                         context,
                         MaterialPageRoute(
