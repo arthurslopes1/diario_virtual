@@ -1,8 +1,12 @@
 library globals;
+import 'package:shared_preferences/shared_preferences.dart';
 
 String tela = "";
 int nTela = -1;
 String pNome = "Teste";
+String username = "";
+String password = "";
+bool salvo = false;
 
 class NotaTexto {
   String titulo;
@@ -47,4 +51,17 @@ void filtrar(String filtro) {
 
     }
   });
+}
+
+Future<bool> verificaLogin() async{
+  final prefs = await SharedPreferences.getInstance();
+
+  username = prefs.getString('username');
+  password = prefs.getString('password');
+
+  if(username == null || password == null){
+    return false;
+  }else{
+    return true;
+  }
 }

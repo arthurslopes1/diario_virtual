@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:diario_virtual/globals.dart' as globals;
 import 'package:diario_virtual/pages/lista.dart';
+import 'package:diario_virtual/pages/sobre.dart';
 
 class Nota extends StatelessWidget {
   final tituloCont = TextEditingController();
@@ -90,8 +91,11 @@ class Nota extends StatelessWidget {
                       fontWeight: FontWeight.bold
                     )
                   ),
-                  Icon(Icons.more_vert,
-                  size: 40,
+                  TextButton(
+                    child: Icon(Icons.help, size: 40, color: Colors.black,),
+                    onPressed: () {
+                      showSobre(context);
+                    },
                   ),
                 ],
               ),

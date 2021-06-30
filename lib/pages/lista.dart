@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:diario_virtual/pages/nota.dart';
 import 'package:diario_virtual/globals.dart' as globals;
 import 'package:flutter/services.dart';
+import 'package:diario_virtual/pages/sobre.dart';
 
 class Lista extends StatelessWidget {  
   @override
@@ -65,11 +66,14 @@ class Lista extends StatelessWidget {
                       fontWeight: FontWeight.bold
                     )
                   ),
-                  Icon(Icons.more_vert,
-                  size: 40,
+                  TextButton(
+                    child: Icon(Icons.help_outline, size: 40, color: Colors.black,),
+                    onPressed: () {
+                      showSobre(context);
+                    },
                   ),
                 ],
-              ),
+              ),/*
               Container(
                 height: 40,
                 padding: EdgeInsets.only(left: 15, right: 15),
@@ -113,7 +117,7 @@ class Lista extends StatelessWidget {
               ),
               SizedBox(
                 height: 10,
-              ),
+              ),*/
               Wrap(
                 spacing: 4.0,
                 runSpacing: 0.0,

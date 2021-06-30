@@ -1,3 +1,4 @@
+import 'package:diario_virtual/pages/alertasUsuario.dart';
 import 'package:diario_virtual/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:diario_virtual/pages/lista.dart';
@@ -9,13 +10,7 @@ class Principal extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          globals.pNome = "";
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => Login(),
-            ),
-          );
+          showAlertaLogoff(context);
         },
         tooltip: 'Logout',
         backgroundColor: Colors.black,

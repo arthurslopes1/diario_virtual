@@ -1,10 +1,44 @@
 import 'package:diario_virtual/pages/cadastro.dart';
-import 'package:diario_virtual/pages/principal.dart';
 import 'package:flutter/material.dart';
+import 'package:diario_virtual/pages/alertasUsuario.dart';
+import 'package:diario_virtual/globals.dart' as globals;
+import 'package:diario_virtual/pages/principal.dart';
 
 class Login extends StatelessWidget {
+  final loginCont = TextEditingController();
+  final senhaCont = TextEditingController();
+
+  void realizarLogin(BuildContext context){
+    //Adicionar validação de login
+    if(true){
+      if(globals.salvo){
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Principal(),
+          ),
+        );
+      }else{
+        globals.username = loginCont.text;
+        globals.password = senhaCont.text;
+        showAlertaLogin(context);
+      }
+    } 
+  }
+
   @override
   Widget build(BuildContext context) {
+    globals.verificaLogin().then((value) {
+      if(value){
+        loginCont.text = globals.username;
+        globals.username = null;
+        senhaCont.text = globals.password;
+        globals.password = null;
+        globals.salvo = true;
+        realizarLogin(context);
+      }
+    });
+
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 60, left: 40, right: 40),
@@ -23,6 +57,7 @@ class Login extends StatelessWidget {
               height: 20,
             ),
             TextFormField(
+              controller: loginCont,
               // autofocus: true,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
@@ -39,6 +74,7 @@ class Login extends StatelessWidget {
               height: 10,
             ),
             TextFormField(
+              controller: senhaCont,
               // autofocus: true,
               keyboardType: TextInputType.text,
               obscureText: true,
@@ -81,15 +117,7 @@ class Login extends StatelessWidget {
                     ],
                   ),
                   onPressed: () {
-                    //Adicionar validação de login
-                    if(true){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Principal(),
-                        ),
-                      );
-                    } 
+                    realizarLogin(context);
                   },
                 ),
               ),
