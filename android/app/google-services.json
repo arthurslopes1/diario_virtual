@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "525580269334",
+    "project_id": "diario-digital-5dffd",
+    "storage_bucket": "diario-digital-5dffd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525580269334:android:bd813f4296cbaacae94237",
+        "android_client_info": {
+          "package_name": "br.ucl.diario_virtual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "525580269334-gbg928uc00b5no0bbslgra4skor0ot2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo4irFvIZZGgeLnwMpf5hDyHe5x2r73YE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "525580269334-gbg928uc00b5no0bbslgra4skor0ot2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.example.diario_virtual
+package br.ucl.diario_virtual
 
 import io.flutter.embedding.android.FlutterActivity
 

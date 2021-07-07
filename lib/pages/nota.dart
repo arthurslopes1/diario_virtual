@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:diario_virtual/globals.dart' as globals;
 import 'package:diario_virtual/pages/lista.dart';
 import 'package:diario_virtual/pages/sobre.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Nota extends StatelessWidget {
   final tituloCont = TextEditingController();
@@ -22,13 +23,22 @@ class Nota extends StatelessWidget {
         children: [
           FloatingActionButton(
             heroTag: 'salvar',
-            onPressed: () {
+            onPressed: () async {
+              final firestore = FirebaseFirestore.instance;
+
               if(globals.iNota != -1){
-                globals.vPrincipal[globals.iNota].titulo = tituloCont.text;
-                globals.vPrincipal[globals.iNota].texto = textoCont.text;
-                globals.vPrincipal[globals.iNota].data = DateTime.now();
+                await FirebaseFirestore.instance.collection('${globals.nTela}').doc(globals.vPrincipal[globals.iNota].id).set({
+                  'titulo': tituloCont.text,
+                  'texto': textoCont.text,
+                  'data': DateTime.now().toString(),
+                });
               }else{
-                globals.vPrincipal.add( new globals.NotaTexto(tituloCont.text, textoCont.text, DateTime.now()));
+                await FirebaseFirestore.instance.collection('${globals.nTela}').add({
+                  'UUID': globals.UUID,
+                  'titulo': tituloCont.text,
+                  'texto': textoCont.text,
+                  'data': DateTime.now().toString(),
+                });
               }
 
               globals.iNota = -1;
@@ -66,11 +76,8 @@ class Nota extends StatelessWidget {
           ),
           FloatingActionButton(
             heroTag: 'excluir',
-            onPressed: () {
-              //excluir
-              if(globals.iNota != -1){
-                globals.vPrincipal.removeAt(globals.iNota);
-              }
+            onPressed: () async {
+              await FirebaseFirestore.instance.collection('${globals.nTela}').doc(globals.vPrincipal[globals.iNota].id).delete();
 
               globals.iNota = -1;
               Navigator.push(

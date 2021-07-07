@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.diario_virtual">
+    package="br.ucl.diario_virtual">
    <application
         android:label="diario_virtual"
         android:icon="@mipmap/ic_launcher">

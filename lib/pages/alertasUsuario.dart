@@ -14,7 +14,9 @@ showAlertaLogin(BuildContext context) {
       final prefs = await SharedPreferences.getInstance();
 
       prefs.setString('username', globals.username);
+      debugPrint("movieTitle: ${globals.username}");
       prefs.setString('password', globals.password);
+      debugPrint('movieTitle: ${globals.password}');
 
       Navigator.push(
         context,

@@ -30,10 +30,6 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     globals.verificaLogin().then((value) {
       if(value){
-        loginCont.text = globals.username;
-        globals.username = null;
-        senhaCont.text = globals.password;
-        globals.password = null;
         globals.salvo = true;
         realizarLogin(context);
       }

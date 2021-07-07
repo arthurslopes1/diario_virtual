@@ -8,6 +8,7 @@ class Principal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /*
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showAlertaLogoff(context);
@@ -16,14 +17,23 @@ class Principal extends StatelessWidget {
         backgroundColor: Colors.black,
         child: Icon(Icons.logout),
       ),
+      */
       body: Center(
         child: Container(
-          padding: EdgeInsets.only(top: 60, left: 40, right: 40),
+          padding: EdgeInsets.only(top: 20, left: 40, right: 40),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              SizedBox(
+                width: 128,
+                height: 128,
+                child: Image.asset('imagens/logo.png'),
+              ),
+              SizedBox(
+                height: 50,
+              ),
               Text(
-                'Bem vindo, ${globals.pNome}',
+                'Bem vindo',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
