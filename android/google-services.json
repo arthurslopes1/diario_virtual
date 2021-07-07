@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "693939278905",
+    "firebase_url": "https://diario-digital-c8d4b-default-rtdb.firebaseio.com",
+    "project_id": "diario-digital-c8d4b",
+    "storage_bucket": "diario-digital-c8d4b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693939278905:android:17cdb0494501cc4f6da9e8",
+        "android_client_info": {
+          "package_name": "diario.digital01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693939278905-ggb109ebavfggj8gmaa97c7cel4perat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6EcWDyo54fagN4HzXIye62rnmDCVsZJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693939278905-ggb109ebavfggj8gmaa97c7cel4perat.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

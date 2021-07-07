@@ -61,6 +61,29 @@ class Nota extends StatelessWidget {
             backgroundColor: Colors.black,
             child: Icon(Icons.cancel),
           ),
+          SizedBox(
+                height: 10,
+          ),
+          FloatingActionButton(
+            heroTag: 'excluir',
+            onPressed: () {
+              //excluir
+              if(globals.iNota != -1){
+                globals.vPrincipal.removeAt(globals.iNota);
+              }
+
+              globals.iNota = -1;
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Lista(),
+                ),
+              );
+            },
+            tooltip: 'Excluir',
+            backgroundColor: Colors.black,
+            child: Icon(Icons.delete),
+          ),
         ]
       ),
       body: ListView(

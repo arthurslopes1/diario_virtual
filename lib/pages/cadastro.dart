@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class Cadastro extends StatelessWidget {
+  final loginCont = TextEditingController();
+  final senhaCont = TextEditingController();
+  final nomeCont = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,6 +18,7 @@ class Cadastro extends StatelessWidget {
               height: 130,
             ),
             TextFormField(
+              controller: nomeCont,
               // autofocus: true,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
@@ -31,6 +37,7 @@ class Cadastro extends StatelessWidget {
               height: 10,
             ),
             TextFormField(
+              controller: loginCont,
               // autofocus: true,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
@@ -49,6 +56,7 @@ class Cadastro extends StatelessWidget {
               height: 10,
             ),
             TextFormField(
+              controller: senhaCont,
               // autofocus: true,
               keyboardType: TextInputType.text,
               obscureText: true,
@@ -103,7 +111,7 @@ class Cadastro extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   onPressed: () {
-                    //Código do cadastro
+                    //http.post('https://diario-digital-c8d4b-default-rtdb.firebaseio.com/')
                   },
                 ),
               ),

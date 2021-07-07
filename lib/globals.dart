@@ -9,6 +9,7 @@ String password = "";
 bool salvo = false;
 
 class NotaTexto {
+  int id;
   String titulo;
   String texto;
   DateTime data;

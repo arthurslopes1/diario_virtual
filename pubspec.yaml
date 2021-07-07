@@ -36,6 +36,7 @@ dev_dependencies:
   flutter_launcher_icons: "^0.9.0"
 
   shared_preferences: "^2.0.6"
+  http:
 
 flutter_icons:
   image_path: "imagens/logo.png"
